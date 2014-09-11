@@ -51,7 +51,7 @@ let s:palette = {
     \ 'cyan'      : ["#8fa7df", 81  ],
     \ 'green'     : ["#a5ff0b", 154 ],
     \ 'gray'      : ["#606060", 241 ],
-    \ 'grayLine'  : ["#121212", 233 ],
+    \ 'grayLine'  : ["#121212", 232 ],
     \ 'white'     : ["#e7e7e7", 231 ],
     \ }
 
