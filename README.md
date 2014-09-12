@@ -5,7 +5,8 @@ My personal colorscheme for Vim
 
 #Screenshots
 
-![ScreenShot](http://i.cubeupload.com/uvxDmY.png)
+(MacVim)
+![ScreenShot](http://i.cubeupload.com/AICZ9S.png)
 
 Supports to cterm colors
 ![ScreenShot](http://i.cubeupload.com/D68xbv.png)
