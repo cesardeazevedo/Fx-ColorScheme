@@ -15,7 +15,7 @@ let s:N3  =  [ g:getColor('gray', "gui")   , g:getColor('base2', "gui"),
 let g:airline#themes#fx#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
 
 let g:airline#themes#fx#palette.normal_modified = { 
-    \ 'airline_c' : [ g:getColor('purple','gui'), g:getColor('grayLine','gui'), s:N1[2], s:N1[3], ''  ],
+    \ 'airline_c' : [ g:getColor('purple','gui'), g:getColor('base3','gui'), s:N1[2], s:N1[3], ''  ],
     \ }
 
 "}}}
