@@ -37,21 +37,35 @@ let g:colors_name = "fx"
 " }}}
 
 " Palette Colors" {{{
+"
+" | FX Colors |   HEX   |     RGB     | CTERM |
+" | --------- |:-------:|:-----------:| -----:|
+" | base      | #202020 | 32  32  32  |  233  |
+" | base2     | #303030 | 48  48  48  |  234  |
+" | base3     | #121212 | 18  18  18  |  233  |
+" | black     | #000000 | 0   0   0   |  232  |
+" | red       | #f40065 | 244 0   101 |  197  |
+" | red2      | #ff0000 | 255 0   0   |  9    |
+" | orange    | #ed9e26 | 237 158 38  |  214  |
+" | purple    | #7100ff | 113 0   255 |  99   |
+" | purple2   | #5f00d7 | 95  0   215 |  56   |
+" | green     | #a5ff0b | 165 255 11  |  154  |
+" | gray      | #606060 | 96  96  96  |  241  |
+" | white     | #e7e7e7 | 231 231 231 |  231  |
+" }}}
 
 let s:palette = {
     \ 'base'      : ["#202020", 233 ],
     \ 'base2'     : ["#303030", 234 ],
+    \ 'base3'     : ["#121212", 233 ],
     \ 'black'     : ["#000000", 232 ],
     \ 'red'       : ["#f40065", 197 ],
     \ 'red2'      : ["#ff0000", 9   ],
-    \ 'pink'      : ["#f45295", 9   ],
     \ 'orange'    : ["#ed9e26", 214 ],
     \ 'purple'    : ["#7100ff", 99  ],
     \ 'purple2'   : ["#5f00d7", 56  ],
-    \ 'cyan'      : ["#8fa7df", 81  ],
     \ 'green'     : ["#a5ff0b", 154 ],
     \ 'gray'      : ["#606060", 241 ],
-    \ 'grayLine'  : ["#121212", 232 ],
     \ 'white'     : ["#e7e7e7", 231 ],
     \ }
 
@@ -67,17 +81,15 @@ if has("gui_running")
     let s:bgNone    = " guibg=NONE"
     let s:base      = s:palette['base'][0]
     let s:base2     = s:palette['base2'][0]
+    let s:base3     = s:palette['base3'][0]
     let s:black     = s:palette['black'][0]
     let s:red       = s:palette['red'][0]
     let s:red2      = s:palette['red2'][0]
-    let s:pink      = s:palette['pink'][0]
     let s:orange    = s:palette['orange'][0]
     let s:purple    = s:palette['purple'][0]
     let s:purple2   = s:palette['purple2'][0]
-    let s:cyan      = s:palette['cyan'][0]
     let s:green     = s:palette['green'][0]
     let s:gray      = s:palette['gray'][0]
-    let s:grayLine  = s:palette['grayLine'][0]
     let s:white     = s:palette['white'][0]
 
 else
@@ -88,17 +100,15 @@ else
     let s:bgNone    = " ctermbg=NONE"
     let s:base      = s:palette['base'][1]
     let s:base2     = s:palette['base2'][1]
+    let s:base3     = s:palette['base3'][1]
     let s:black     = s:palette['black'][1]
     let s:red       = s:palette['red'][1]
     let s:red2      = s:palette['red2'][1]
-    let s:pink      = s:palette['pink'][1]
     let s:orange    = s:palette['orange'][1]
     let s:purple    = s:palette['purple'][1]
     let s:purple2   = s:palette['purple2'][1]
-    let s:cyan      = s:palette['cyan'][1]
     let s:green     = s:palette['green'][1]
     let s:gray      = s:palette['gray'][1]
-    let s:grayLine  = s:palette['grayLine'][1]
     let s:white     = s:palette['white'][1]
 endif
 
@@ -132,12 +142,12 @@ exe "hi! Normal"       .s:term."fg="  .s:white   .s:none   .s:term."bg="   .s:ba
 exe "hi! Cursor"       .s:term."fg="  .s:white   .s:none   .s:term."bg="   .s:purple2
 "       *Cursor         the character under the cursor
 
-exe "hi! CursorLine"   .s:none        .s:term    ."bg="    .s:grayLine
+exe "hi! CursorLine"   .s:none        .s:term    ."bg="    .s:base3
 "       *CursorLine     the screen line that the cursor is in when 'cursorline' is set
 
-exe "hi! CursorLineNr" .s:term."fg="  .s:purple2 .s:bold   .s:term."bg="   .s:white 
+exe "hi! CursorLineNr" .s:term."fg="  .s:purple2 .s:bold   .s:term."bg="   .s:white
 
-exe "hi! LineNr"       .s:term."fg="  .s:gray    .s:none   .s:term."bg="   .s:grayLine
+exe "hi! LineNr"       .s:term."fg="  .s:gray    .s:none   .s:term."bg="   .s:base3
 "       *LineNr         Line number for ':number' and ':#' commands, and when 'number' or 'relativenumber' option is set.
 
 exe "hi! Comment"      .s:term."fg="  .s:gray    .s:none   .s:bgNone
@@ -296,6 +306,15 @@ exe "hi! htmlTagName"         .s:term."fg="      .s:red    .s:none         .s:bg
 exe "hi! htmlSpecialTagName"  .s:term."fg="      .s:red    .s:none         .s:bgNone
 exe "hi! htmlEndTag"          .s:term."fg="      .s:white  .s:none         .s:bgNone
 "}}}
+"
+" Diffs " {{{
+
+exe "hi! DiffAdd"             .s:term."fg="      .s:green  .s:bold         .s:term."bg="    .s:base2
+exe "hi! DiffDelete"          .s:term."fg="      .s:red2   .s:italic       .s:term."bg="    .s:base2
+exe "hi! DiffChange"          .s:term."fg="      .s:green  .s:none         .s:term."bg="    .s:base2
+exe "hi! DiffText"            .s:term."fg="      .s:orange .s:none         .s:term."bg="    .s:gray
+
+" }}}
 
 " Ruby "{{{
 "
