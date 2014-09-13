@@ -69,11 +69,19 @@ let s:palette = {
     \ 'white'     : ["#e7e7e7", 231 ],
     \ }
 
+function! s:SetFont()
+    if has("macunix")
+        set guifont=Monaco:h14
+    elseif has("unix")
+        set guifont=Inconsolata\ Medium\ 11
+    endif
+endfunction
+
 if has("gui_running")
 
-    " set font options 
-    call g:SetFont()
- 
+    " set font
+    call s:SetFont()
+
     let s:term      = " gui"
     let s:none      = " gui=NONE"
     let s:bold      = " gui=BOLD"
@@ -116,16 +124,7 @@ let s:n = "NONE"
 
 " }}}
 
-" Set Fontsize " {{{
-
-function! g:SetFont()
-    if has("macunix")
-        set guifont=Monaco:h14
-    elseif has("unix")
-        set guifont=Monaco\ Medium\ 12
-    endif
-endfunction
-
+" Export colors to Airline configuration " {{{
 
 function! g:getColor(color, term)
     return a:term == "gui" ? s:palette[a:color][0] : s:palette[a:color][1]
