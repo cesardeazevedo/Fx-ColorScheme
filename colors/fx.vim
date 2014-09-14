@@ -160,8 +160,11 @@ exe "hi! Constant"     .s:term."fg="  .s:green   .s:none   .s:bgNone
 "        Boolean        a boolean constant: TRUE, false
 "        Float          a floating point constant: 2.3e10
 
-exe "hi! Identifier"   .s:term."fg="  .s:orange  .s:none   .s:bgNone
+exe "hi! Identifier"   .s:term."fg="  .s:white   .s:none   .s:bgNone
 "       *Identifier     any variable name
+"        Function       function name (also: methods for classes)
+
+exe "hi! Function"     .s:term."fg="  .s:purple  .s:none   .s:bgNone
 "        Function       function name (also: methods for classes)
 
 exe "hi! Statement"    .s:term."fg="  .s:red     .s:none   .s:bgNone
