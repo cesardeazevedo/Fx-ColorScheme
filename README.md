@@ -81,5 +81,12 @@ if you want a light background mode :
 | grayLine     | #121212 | 18  18  18  |  233  |
 | white        | #e7e7e7 | 231 231 231 |  231  |
 
+
+#Contributions
+I would be happy to receive contributions and pull requests. 
+
+I did a palette which contains all colors in hex value, rga colors separately and cterm value respectively, maybe be enough to export to another editors.
+
+
 #License 
 [MIT](https://github.com/cesardeazevedo/Fx-ColorScheme/blob/master/LICENSE) Copyright (c) 2014 César Augusto D. Azevedo
