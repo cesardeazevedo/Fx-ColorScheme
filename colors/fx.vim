@@ -23,9 +23,7 @@
 " Author:  Cesar Augusto D. Azevedo <cesardeazevedo@outlook.com>
 " Github:  http://github.com/cesardeazevedo/Fx-ColorScheme
 " License: MIT
-" Version: 0.1
-
-set background=dark
+" Version: 0.3
 
 "Initialize Colorschemes "{{{
 hi clear
@@ -38,36 +36,57 @@ let g:colors_name = "fx"
 
 " Palette Colors" {{{
 "
-" | FX Colors |   HEX   |     RGB     | CTERM |
-" | --------- |:-------:|:-----------:| -----:|
-" | base      | #202020 | 32  32  32  |  233  |
-" | base2     | #303030 | 48  48  48  |  234  |
-" | base3     | #121212 | 18  18  18  |  233  |
-" | black     | #000000 | 0   0   0   |  232  |
-" | red       | #f40065 | 244 0   101 |  197  |
-" | red2      | #ff0000 | 255 0   0   |  9    |
-" | orange    | #ed9e26 | 237 158 38  |  214  |
-" | purple    | #7100ff | 113 0   255 |  99   |
-" | purple2   | #5f00d7 | 95  0   215 |  56   |
-" | green     | #a5ff0b | 165 255 11  |  154  |
-" | gray      | #606060 | 96  96  96  |  241  |
-" | white     | #e7e7e7 | 231 231 231 |  231  |
+" | FX Colors    |   HEX   |     RGB     | CTERM |
+" | ---------    |:-------:|:-----------:| -----:|
+" | base         | #202020 | 32  32  32  |  233  |
+" | base light   | #f5f5f5 | 245 245 245 |  231  |
+" | base2        | #303030 | 48  48  48  |  234  |
+" | base2 light  | #e7e7e7 | 231 231 231 |  172  |
+" | base3        | #121212 | 18  18  18  |  233  |
+" | black        | #000000 | 0   0   0   |  232  |
+" | red          | #f40065 | 244 0   101 |  197  |
+" | red2         | #ff0000 | 255 0   0   |  9    |
+" | orange       | #ed9e26 | 237 158 38  |  214  |
+" | orange light | #f07800 | 240 120 0   |  172  |
+" | purple       | #7100ff | 113 0   255 |  99   |
+" | purple2      | #5f00d7 | 95  0   215 |  56   |
+" | green        | #a5ff0b | 165 255 11  |  154  |
+" | green light  | #00d506 | 0   213 6   |  34   |
+" | gray         | #606060 | 96  96  96  |  241  |
+" | white        | #e7e7e7 | 231 231 231 |  231  |
 " }}}
 
 let s:palette = {
     \ 'base'      : ["#202020", 233 ],
+    \ 'baseL'     : ["#f5f5f5", 231 ],
     \ 'base2'     : ["#303030", 234 ],
+    \ 'base2L'    : ["#e7e7e7", 254 ],
     \ 'base3'     : ["#121212", 233 ],
     \ 'black'     : ["#000000", 232 ],
     \ 'red'       : ["#f40065", 197 ],
     \ 'red2'      : ["#ff0000", 9   ],
     \ 'orange'    : ["#ed9e26", 214 ],
+    \ 'orangeL'   : ["#f07800", 172 ],
     \ 'purple'    : ["#7100ff", 99  ],
     \ 'purple2'   : ["#5f00d7", 56  ],
     \ 'green'     : ["#a5ff0b", 154 ],
+    \ 'greenL'    : ["#00d506", 34  ],
     \ 'gray'      : ["#606060", 241 ],
     \ 'white'     : ["#e7e7e7", 231 ],
     \ }
+
+if &background == "light"
+    " Invert colors
+    let s:palette['base']   = s:palette["baseL"]
+    let s:palette["base2"]  = s:palette["base2L"]
+    let s:palette["base3"]  = s:palette["base2L"]
+    let s:palette["base2L"] = s:palette["base"]
+    let s:palette["white"]  = s:palette["black"]
+    let s:palette["black"]  = s:palette["base3"]
+    let s:palette["orange"] = s:palette["orangeL"]
+    let s:palette["green"]  = s:palette["greenL"]
+    let s:palette["purple"] = s:palette["purple2"]
+endif
 
 function! s:SetFont()
     if has("macunix")
@@ -89,6 +108,7 @@ if has("gui_running")
     let s:bgNone    = " guibg=NONE"
     let s:base      = s:palette['base'][0]
     let s:base2     = s:palette['base2'][0]
+    let s:base2L    = s:palette['base2L'][0]
     let s:base3     = s:palette['base3'][0]
     let s:black     = s:palette['black'][0]
     let s:red       = s:palette['red'][0]
@@ -108,6 +128,7 @@ else
     let s:bgNone    = " ctermbg=NONE"
     let s:base      = s:palette['base'][1]
     let s:base2     = s:palette['base2'][1]
+    let s:base2L    = s:palette['base2L'][1]
     let s:base3     = s:palette['base3'][1]
     let s:black     = s:palette['black'][1]
     let s:red       = s:palette['red'][1]
@@ -144,7 +165,7 @@ exe "hi! Cursor"       .s:term."fg="  .s:white   .s:none   .s:term."bg="   .s:pu
 exe "hi! CursorLine"   .s:none        .s:term    ."bg="    .s:base3
 "       *CursorLine     the screen line that the cursor is in when 'cursorline' is set
 
-exe "hi! CursorLineNr" .s:term."fg="  .s:purple2 .s:bold   .s:term."bg="   .s:white
+exe "hi! CursorLineNr" .s:term."fg="  .s:purple2 .s:bold   .s:term."bg="   .s:base2L
 
 exe "hi! LineNr"       .s:term."fg="  .s:gray    .s:none   .s:term."bg="   .s:base3
 "       *LineNr         Line number for ':number' and ':#' commands, and when 'number' or 'relativenumber' option is set.
@@ -179,18 +200,21 @@ exe "hi! Statement"    .s:term."fg="  .s:red     .s:none   .s:bgNone
 exe "hi! Operator"     .s:term."fg="  .s:white   .s:none   .s:bgNone
 "        Operator      'sizeof', '+', '*', etc.
 
-exe "hi! PreProc"      .s:term."fg="  .s:purple  .s:none   .s:bgNone
+exe "hi! PreProc"      .s:term."fg="  .s:purple     .s:none   .s:bgNone
 "       *PreProc        generic Preprocessor
 "        Include        preprocessor #include
 "        Define         preprocessor #define
 "        Macro          same as Define
 "        PreCondit      preprocessor #if, #else, #endif, etc.
 
-exe "hi! Type"         .s:term."fg="  .s:purple  .s:none   .s:bgNone
+exe "hi! Type"         .s:term."fg="  .s:red  .s:none   .s:bgNone
 "       *Type           int, long, char, etc.
 "        StorageClass   static, register, volatile, etc.
 "        Structure      struct, union, enum, etc.
 "        Typedef        A typedef
+
+exe "hi! StorageClass" .s:term."fg="  .s:purple     .s:none   .s:bgNone
+"        Structure      struct, union, enum, etc.
 
 exe "hi! Special"      .s:term."fg="  .s:gray    .s:none   .s:bgNone
 "       *Special        any special symbol
@@ -320,23 +344,30 @@ exe "hi! DiffText"            .s:term."fg="      .s:orange .s:none         .s:te
 
 " Ruby "{{{
 "
-exe "hi! link rubyDefine        Keyword"
-
-exe "hi! link rubyClass         Keyword"
-
-exe "hi! link rubyKeyword       Keyword"
-
-exe "hi! link rubyIdentifier    Identifier"
-
-exe "hi! link rubyConstant      Type"
-
-exe "hi! link rubyOperator      Operator"
-
-exe "hi! link rubyConstant      Constant"
-
-exe "hi! link rubyClassVariable Keyword"
+hi! link rubyDefine        Keyword
+hi! link rubyClass         Keyword
+hi! link rubyKeyword       Keyword
+hi! link rubyIdentifier    Identifier
+hi! link rubyConstant      Type
+hi! link rubyOperator      Operator
+hi! link rubyConstant      Constant
+hi! link rubyClassVariable Keyword
 
 "}}}
-
 "
+" Haskell "{{{
+
+hi! link hsString           String
+hi! link hs_hlFunctionName  Type
+hi! link hsImport           Type
+hi! link hsType             StorageClass
+hi! link hsTypedef          Type
+hi! link hsStructure        Type
+hi! link hsStatement        Type
+hi! link hsImportLabel      String
+hi! link hsModuleName       String
+hi! link hsModuleStartLabel String
+hi! link hsModuleWhereLabel String
+
+" }}}
 
