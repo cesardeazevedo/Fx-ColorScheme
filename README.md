@@ -85,7 +85,7 @@ if you want a light background mode :
 #Contributions
 I would be happy to receive contributions and pull requests. 
 
-I did a palette which contains all colors in hex value, rga colors separately and cterm value respectively, maybe be enough to export to another editors.
+I did a palette which contains all colors in hex value, rga colors separately and cterm value respectively, maybe be enough to export to others editors.
 
 
 #License 
