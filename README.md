@@ -11,11 +11,11 @@ My personal colorscheme for Vim
 ####CTerm Colors
 ![ScreenShot](http://i.cubeupload.com/D68xbv.png)
 
-#Light Mode
+##Light Mode
 ![ScreenShot](http://i.cubeupload.com/5RNm5x.png)
 
 
-#Airline Theme
+##Airline Theme
 Supports to statusline [Vim-Airline](https://github.com/bling/vim-airline).
 ![ScreenShot](http://i.cubeupload.com/86n8gU.png)
 
