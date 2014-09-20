@@ -90,7 +90,7 @@ endif
 
 function! s:SetFont()
     if has("macunix")
-        set guifont=Monaco:h14
+        set guifont=Monaco\ for\ Powerline:h14
     elseif has("unix")
         set guifont=Inconsolata\ Medium\ 11
     endif
