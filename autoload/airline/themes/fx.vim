@@ -25,8 +25,8 @@ let g:airline#themes#fx#palette.normal_modified = {
 
 " Insert Mode " {{{
 
-let s:I1  =  [ s:white[0] , g:getColor('green', "gui"),
-             \ s:white[1] , g:getColor('green', "cterm")]
+let s:I1  =  [ '#006000' , g:getColor('green', "gui"),
+             \ '2' , g:getColor('green', "cterm")]
 
 let s:I2  =  [ g:getColor('black', "gui")   , g:getColor('white', "gui"),
              \ g:getColor('black', "cterm") , g:getColor('white', "cterm")]
