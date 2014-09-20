@@ -6,18 +6,18 @@ My personal colorscheme for Vim
 #Screenshots
 
 ####MacVim
-![ScreenShot](http://i.cubeupload.com/AICZ9S.png)
+![ScreenShot](http://i.cubeupload.com/gELCwc.png)
 
 ####CTerm Colors
-![ScreenShot](http://i.cubeupload.com/D68xbv.png)
+![ScreenShot](http://i.cubeupload.com/PuEX0L.png)
 
 ##Light Mode
-![ScreenShot](http://i.cubeupload.com/5RNm5x.png)
+![ScreenShot](http://i.cubeupload.com/feSwmO.png)
 
 
 ##Airline Theme
 Supports to statusline [Vim-Airline](https://github.com/bling/vim-airline).
-![ScreenShot](http://i.cubeupload.com/86n8gU.png)
+![ScreenShot](http://i.cubeupload.com/XWVdCC.png)
 
 
 
