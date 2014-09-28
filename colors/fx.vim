@@ -341,6 +341,26 @@ exe "hi! DiffChange"          .s:term."fg="      .s:green  .s:none         .s:te
 exe "hi! DiffText"            .s:term."fg="      .s:orange .s:none         .s:term."bg="    .s:gray
 
 " }}}
+"
+" Css " {{{
+exe "hi! cssTagName"          .s:term."fg="      .s:green  .s:none         .s:bgNone
+exe "hi! cssClassName"        .s:term."fg="      .s:red    .s:none         .s:bgNone
+exe "hi! cssIdentifier"       .s:term."fg="      .s:purple .s:none         .s:bgNone
+exe "hi! cssBraces"           .s:term."fg="      .s:gray   .s:none         .s:bgNone
+exe "hi! cssColor"            .s:term."fg="      .s:green  .s:none         .s:bgNone
+exe "hi! cssMedia"            .s:term."fg="      .s:red2   .s:none         .s:bgNone
+exe "hi! cssImportant"        .s:term."fg="      .s:orange .s:none         .s:bgNone
+exe "hi! cssInclude"          .s:term."fg="      .s:red2   .s:none         .s:bgNone
+exe "hi! cssValueLength"      .s:term."fg="      .s:green  .s:none         .s:bgNone
+exe "hi! cssRenderProp"       .s:term."fg="      .s:white  .s:none         .s:bgNone
+exe "hi! cssBoxProp"          .s:term."fg="      .s:white  .s:none         .s:bgNone
+exe "hi! cssPagingProp"       .s:term."fg="      .s:white  .s:none         .s:bgNone
+exe "hi! cssAuralProp"        .s:term."fg="      .s:white  .s:none         .s:bgNone
+exe "hi! cssUIProp"           .s:term."fg="      .s:white  .s:none         .s:bgNone
+exe "hi! cssTextProp"         .s:term."fg="      .s:white  .s:none         .s:bgNone
+exe "hi! cssFontProp"         .s:term."fg="      .s:white  .s:none         .s:bgNone
+exe "hi! cssColorProp"        .s:term."fg="      .s:white  .s:none         .s:bgNone
+" }}}
 
 " Ruby "{{{
 "
