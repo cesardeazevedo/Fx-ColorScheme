@@ -19,7 +19,8 @@ My personal colorscheme for Vim
 Supports to statusline [Vim-Airline](https://github.com/bling/vim-airline).
 ![ScreenShot](http://i.cubeupload.com/XWVdCC.png)
 
-
+##Terminal.app
+![ScreenShot](http://i.cubeupload.com/d2bbqR.png)
 
 #Installation
 
