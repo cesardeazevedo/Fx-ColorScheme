@@ -147,7 +147,7 @@ let s:n = "NONE"
 
 " Export colors to Airline configuration " {{{
 
-function! g:getColor(color, term)
+func! g:getColor(color, term)
     return a:term == "gui" ? s:palette[a:color][0] : s:palette[a:color][1]
 endfunction
 
@@ -245,6 +245,9 @@ exe "hi! SpecialKey"   .s:term."fg="  .s:gray    .s:none   .s:bgNone
 "                       to show unprintable characters in the text, 'listchars'.
 "                       Generally: text that is displayed differently from what it
 "                       really is.
+"
+exe "hi! NonText"      .s:term."fg=bg"
+"       *Remove tilde characters ' ~ '
 
 exe "hi! link ErrorMsg Error"
 "            *ErrorMsg error messages on the command line
