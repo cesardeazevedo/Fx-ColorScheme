@@ -147,7 +147,7 @@ let s:n = "NONE"
 
 " Export colors to Airline configuration " {{{
 
-func! g:getColor(color, term)
+func! g:GetColor(color, term)
     return a:term == "gui" ? s:palette[a:color][0] : s:palette[a:color][1]
 endfunction
 
