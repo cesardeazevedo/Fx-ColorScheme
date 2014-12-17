@@ -344,6 +344,12 @@ exe "hi! DiffChange"          .s:term."fg="      .s:green  .s:none         .s:te
 exe "hi! DiffText"            .s:term."fg="      .s:orange .s:none         .s:term."bg="    .s:gray
 
 " }}}
+" Git Gutter "{{{
+exe "hi! GitGutterAdd"           .s:term."fg="      .s:green    .s:none       .s:term."bg="  .s:gray
+exe "hi! GitGutterChange"        .s:term."fg="      .s:orange   .s:none       .s:term."bg="  .s:gray
+exe "hi! GitGutterDelete"        .s:term."fg="      .s:red2     .s:none       .s:term."bg="  .s:gray
+exe "hi! GitGutterChangeDelete"  .s:term."fg="      .s:red2     .s:none       .s:term."bg="  .s:gray
+" }}}
 "
 " Css " {{{
 exe "hi! cssTagName"          .s:term."fg="      .s:green  .s:none         .s:bgNone
