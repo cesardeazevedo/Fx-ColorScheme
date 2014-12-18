@@ -266,6 +266,9 @@ exe "hi! StatusLineNC" .s:term."fg="  .s:white   .s:none   .s:term."bg="   .s:pu
 exe "hi! CursorColumn" .s:term."fg="  .s:white   .s:none   .s:bgNone
 "       *CursorColumn   the screen column that the cursor is in when 'cursorcolumn' is set
 
+exe "hi! MatchParen"   .s:term."fg="  .s:white   .s:bold   .s:term."bg="   .s:purple2
+"        Match parentheses
+
 exe "hi! Directory"    .s:term."fg="  .s:red     .s:none   .s:bgNone
 "       *Directory      directory names (and other special names in listings)
 "
