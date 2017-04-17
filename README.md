@@ -3,26 +3,26 @@ Fx-ColorScheme
 
 My personal colorscheme for Vim
 
-#Screenshots
+# Screenshots
 
-####MacVim
+#### MacVim
 ![ScreenShot](http://i.cubeupload.com/gELCwc.png)
 
-####CTerm Colors
+#### CTerm Colors
 ![ScreenShot](http://i.cubeupload.com/PuEX0L.png)
 
-##Light Mode
+## Light Mode
 ![ScreenShot](http://i.cubeupload.com/feSwmO.png)
 
 
-##Airline Theme
+## Airline Theme
 Supports to statusline [Vim-Airline](https://github.com/bling/vim-airline).
 ![ScreenShot](http://i.cubeupload.com/XWVdCC.png)
 
-##Terminal.app
+## Terminal.app
 ![ScreenShot](http://i.cubeupload.com/d2bbqR.png)
 
-#Installation
+# Installation
 
 ### Manual Installation
 
@@ -83,11 +83,11 @@ if you want a light background mode :
 | white        | #e7e7e7 | 231 231 231 |  231  |
 
 
-#Contributions
+# Contributions
 I would be happy to receive contributions and pull requests. 
 
 I did a palette which contains all colors in hex value, rga colors separately and cterm value respectively, maybe be enough to export to others editors.
 
 
-#License 
+# License 
 [MIT](https://github.com/cesardeazevedo/Fx-ColorScheme/blob/master/LICENSE) Copyright (c) 2014 César Augusto D. Azevedo
