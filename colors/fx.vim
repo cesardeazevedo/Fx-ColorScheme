@@ -90,7 +90,7 @@ endif
 
 function! s:SetFont()
     if has("macunix")
-        set guifont=Monaco\ for\ Powerline:h14
+        set guifont=Monaco\ for\ Powerline:h20
     elseif has("unix")
         set guifont=Inconsolata\ Medium\ 11
     endif
@@ -98,7 +98,7 @@ endfunction
 
 if has("gui_running")
 
-    " set font
+    set font
     call s:SetFont()
 
     let s:term      = " gui"
@@ -181,7 +181,7 @@ exe "hi! Constant"     .s:term."fg="  .s:green   .s:none   .s:bgNone
 "        Boolean        a boolean constant: TRUE, false
 "        Float          a floating point constant: 2.3e10
 
-exe "hi! Identifier"   .s:term."fg="  .s:white   .s:none   .s:bgNone
+exe "hi! Identifier"   .s:term."fg="  .s:purple   .s:none   .s:bgNone
 "       *Identifier     any variable name
 "        Function       function name (also: methods for classes)
 
@@ -200,7 +200,7 @@ exe "hi! Statement"    .s:term."fg="  .s:red     .s:none   .s:bgNone
 exe "hi! Operator"     .s:term."fg="  .s:white   .s:none   .s:bgNone
 "        Operator      'sizeof', '+', '*', etc.
 
-exe "hi! PreProc"      .s:term."fg="  .s:purple     .s:none   .s:bgNone
+exe "hi! PreProc"      .s:term."fg="  .s:red     .s:none   .s:bgNone
 "       *PreProc        generic Preprocessor
 "        Include        preprocessor #include
 "        Define         preprocessor #define
@@ -354,6 +354,11 @@ exe "hi! GitGutterDelete"        .s:term."fg="      .s:red2     .s:none       .s
 exe "hi! GitGutterChangeDelete"  .s:term."fg="      .s:red2     .s:none       .s:term."bg="  .s:gray
 " }}}
 "
+" ALE "{{{
+exe "hi! ALESignColumnWithErrors" .s:term."fg="  .s:white  .s:none .s:term."bg=Grey"
+exe "hi! ALESignColumnWithoutErrors" .s:term."fg="  .s:white  .s:none .s:term."bg=Grey"
+" }}}
+"
 " Css " {{{
 exe "hi! cssTagName"          .s:term."fg="      .s:green  .s:none         .s:bgNone
 exe "hi! cssClassName"        .s:term."fg="      .s:red    .s:none         .s:bgNone
@@ -403,3 +408,104 @@ hi! link hsModuleWhereLabel String
 
 " }}}
 
+hi! link jsFuncCall Normal
+hi! link jsxOpenPunct Normal
+hi! link jsxClosePunct Normal
+hi! link jsxCloseString Normal
+hi! link jsxBraces Comment
+
+" Typescript {{{
+hi! link typescriptMember Normal
+hi! link typescriptGlobal Constant
+hi! link typescriptImport Function
+hi! link typescriptImportType Error
+hi! link typescriptExport Function
+hi! link typescriptFuncName Function
+hi! link typescriptBraces Normal
+hi! link typescriptArrowFuncArg Normal
+hi! link typescriptTemplateSubstitution Comment
+hi! link typescriptTemplateSB Comment
+hi! link typescriptTypeReference Type
+hi! link typescriptObjectLabel Normal
+hi! link typescriptCastKeyword Constant
+hi! link typescriptBOMNavigatorProp Normal
+hi! link typescriptBOMLocationProp Normal
+hi! link typescriptBOMLocationMethod Normal
+hi! link typescriptBOMWindowEvent Normal
+hi! link typescriptBOMWindowProp Comment
+hi! link typescriptBOMWindowMethod Normal
+hi! link typescriptBOMWindowEvent Normal
+hi! link typescriptDOMDocProp Normal
+hi! link typescriptDOMDocMethod Normal
+hi! link typescriptDOMEventTargetMethod Normal
+hi! link typescriptDOMMutationEvent Normal
+hi! link typescriptGlobalMethod Constant
+hi! link typescriptServiceWorkerProp Normal
+hi! link typescriptHeadersMethod Function
+hi! link typescriptResponseProp Normal
+hi! link typescriptPromiseMethod Type
+hi! link typescriptNodeGlobal Constant
+hi! link typescriptTestGlobal Constant
+hi! link typescriptCall Normal
+" }}}
+
+" Javascript {{{
+hi! link jsFuncArgs Normal
+hi! link jsArrowFuncArgs Normal
+hi! link jsArrowFunction Normal
+" }}}
+
+" Flow {{{
+hi! link jsFlowDefinition         Function
+hi! link jsFlowClassDef           jsFlowDefinition
+hi! link jsFlowArgumentDef        jsFlowDefinition
+hi! link jsFlowType               Function
+hi! link jsFlowTypeCustom         PreProc
+hi! link jsFlowTypeof             PreProc
+hi! link jsFlowTypeofReturn       PreProc
+hi! link jsFlowArray              Function
+hi! link jsFlowObject             Normal
+hi! link jsFlowObjectKeyword      Function
+hi! link jsFlowExactObject        Normal
+hi! link jsFlowParens             PreProc
+hi! link jsFlowGeneric            Function
+hi! link jsFlowObjectGeneric      jsFlowGeneric
+hi! link jsFlowReturn             PreProc
+hi! link jsFlowParenAnnotation    PreProc
+hi! link jsFlowReturnObject       jsFlowReturn
+hi! link jsFlowReturnArray        jsFlowArray
+hi! link jsFlowReturnParens       jsFlowParens
+hi! link jsFlowReturnGroup        jsFlowGeneric
+hi! link jsFlowFunctionGroup      PreProc
+hi! link jsFlowClassGroup         PreProc
+hi! link jsFlowClassFunctionGroup PreProc
+hi! link jsFlowArrow              PreProc
+hi! link jsFlowReturnArrow        PreProc
+hi! link jsFlowTypeStatement      Function
+hi! link jsFlowTypeKeyword        PreProc
+hi! link jsFlowTypeOperator       Operator
+hi! link jsFlowMaybe              PreProc
+hi! link jsFlowReturnMaybe        PreProc
+hi! link jsFlowClassProperty      jsClassProperty
+hi! link jsFlowDeclare            PreProc
+hi! link jsFlowModule             PreProc
+hi! link jsFlowInterface          PreProc
+hi! link jsFlowNoise              Noise
+hi! link jsFlowObjectKey          jsObjectKey
+hi! link jsFlowOrOperator         jsOperator
+hi! link jsFlowReturnOrOp         jsFlowOrOperator
+hi! link jsFlowWildcard           PreProc
+hi! link jsFlowWildcardReturn     PreProc
+hi! link jsFlowImportType         PreProc
+hi! link jsFlowTypeValue          PreProc
+hi! link jsFlowObjectFuncName     jsObjectFuncName
+" }}}
+
+
+" Graphql " {{{
+hi! link graphqlName Function
+hi! link graphqlBraces Normal
+hi! link graphqlTemplateString Normal
+hi! link graphqlTemplateExpression Error
+hi! link graphqlTaggedTemplate Comment
+" }}}
